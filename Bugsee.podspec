@@ -1,42 +1,34 @@
-#
-# Be sure to run `pod lib lint Bugsee.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'Bugsee'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Bugsee.'
+  s.name         = "Bugsee"
+  s.version      = "0.1.0"
+  s.summary      = "Bug reporting for mobile apps. Learn more at https://www.bugsee.com"
+  s.homepage     = "https://www.bugsee.com"
+  s.documentation_url = "https://docs.bugsee.com/sdk/ios/installation/"
+  s.license      = {
+      :type => 'Commercial',
+      :text => <<-LICENSE
+                Copyright (C) 2020 Bugsee
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+                Permission is hereby granted to use this framework as is, modification are not allowed.
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/19604279/Bugsee'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '19604279' => 'denis.sheikherev@quantumsoft.ru' }
-  s.source           = { :git => 'https://github.com/19604279/Bugsee.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'Bugsee/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Bugsee' => ['Bugsee/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+                All rights reserved.
+				
+				THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+				IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+				FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+				AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+				LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+				OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+				THE SOFTWARE.
+      LICENSE
+    }
+  s.author       = { "Bugsee" => "contact@bugsee.com" }
+  s.platform     = :ios, '5.0'
+  s.source       = { :git => "https://github.com/dsheikherev/Bugsee.git", :tag => s.version.to_s }
+  s.preserve_paths =  'Bugsee/Bugsee.xcframework'
+  s.frameworks   = 'CoreGraphics', 'AVFoundation', 'CoreMedia', 'CoreMotion', 'SystemConfiguration', 'Foundation', 'CoreTelephony', 'UIKit'
+  s.libraries    = 'c++'
+  s.xcconfig     =  { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Bugsee/"' }
+  s.requires_arc = true
+  s.vendored_frameworks = 'Bugsee/Bugsee.xcframework'
 end

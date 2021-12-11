@@ -1,0 +1,16 @@
+PODS:
+  - Bugsee (0.1.0)
+
+DEPENDENCIES:
+  - Bugsee (from `../`)
+
+EXTERNAL SOURCES:
+  Bugsee:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Bugsee: 5daeac32c16774de8db36d0b458460fe5aa1f24b
+
+PODFILE CHECKSUM: b1ef9f197166c7a7baea5e84695bae34e4fbb6d2
+
+COCOAPODS: 1.11.2
