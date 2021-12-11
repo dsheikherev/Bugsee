@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Bugsee_Tests' do
+  pod 'Bugsee', :path => '../'
+  
+  
+end
